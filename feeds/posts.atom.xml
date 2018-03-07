@@ -4,7 +4,7 @@
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Comparing-Classifiers-on-the-MNIST-Dataset"&gt;Comparing Classifiers on the MNIST Dataset&lt;a class="anchor-link" href="#Comparing-Classifiers-on-the-MNIST-Dataset"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;h3 id="Erik-Hasse"&gt;Erik Hasse&lt;a class="anchor-link" href="#Erik-Hasse"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The well known MNIST dataset presents a large set of handwritten, greyscale digits. The goal is to use machine learning to identify which digit is pictured. The source used here presents each example as a 784 element vector. Each component of the vector is between 0 and 1. Other sources may provide a different format, but the underlying concepts remain the same.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+&lt;p&gt;The well known MNIST dataset presents a large set of handwritten, grayscale digits. The goal is to use machine learning to identify which digit is pictured. The source used here presents each example as a 784 element vector. Each component of the vector is between 0 and 1. Other sources may provide a different format, but the underlying concepts remain the same.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -980,10 +980,10 @@ h6:hover .anchor-link {
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="Comparing-Classifiers-on-the-MNIST-Dataset"&gt;Comparing Classifiers on the MNIST Dataset&lt;a class="anchor-link" href="#Comparing-Classifiers-on-the-MNIST-Dataset"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;h3 id="Erik-Hasse"&gt;Erik Hasse&lt;a class="anchor-link" href="#Erik-Hasse"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The well known MNIST dataset presents a large set of handwritten, greyscale digits. The goal is to use machine learning to identify which digit is pictured. The source used here presents each example as a 784 element vector. Each component of the vector is between 0 and 1. Other sources may provide a different format, but the underlying concepts remain the same.&lt;/p&gt;
+&lt;p&gt;The well known MNIST dataset presents a large set of handwritten, grayscale digits. The goal is to use machine learning to identify which digit is pictured. The source used here presents each example as a 784 element vector. Each component of the vector is between 0 and 1. Other sources may provide a different format, but the underlying concepts remain the same.&lt;/p&gt;
 &lt;p&gt;My goal in this notebook is to import the data and test a number of different learning algorithms and parameters for those algorithms.&lt;/p&gt;
 &lt;h2 id="Imports-and-exploring-the-data"&gt;Imports and exploring the data&lt;a class="anchor-link" href="#Imports-and-exploring-the-data"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;I begin by importing a number of standard libraries that may be useful. More libraries will be imported as needed. Next I get the MNIST data via TensorFlow. I also take this opportunity to define a couple functions that will be used to test the performance of each classifier.&lt;/p&gt;
-&lt;p&gt;Note that this source has already conveniently been divided into train, validation, and test sets. In addition, it can be imported directly to a one-hot encoding (i.e., the label for the digit 3 is the vector [0,0,0,1,0,0,0,0,0,0] instead of simply 3). For now I will not take advantage of the one-hot encoding. However later I will re-import the data with one-hot encoding. For most data it will be necessary to do these two conversions via SciKitLearn's train_test_split and OneHotEncoder functions, as well as other more in-depth preprocessing.&lt;/p&gt;
+&lt;p&gt;Note that this source has already conveniently been divided into train, validation, and test sets. In addition, it can be imported directly to a one-hot encoding (i.e., the label for the digit 3 is the vector [0,0,0,1,0,0,0,0,0,0] instead of simply 3). For now I will not take advantage of the one-hot encoding. However later I will re-import the data with one-hot encoding. For most data it will be necessary to do these two conversions via SciKit-Learn's train_test_split and OneHotEncoder functions, as well as other more in-depth preprocessing.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2002,7 +2002,7 @@ avg / total       0.92      0.92      0.92      5000
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;That's actually pretty good! Looking at the confusion matrix, the thing that stands out most to me is that this classifier seems to have a hard time predicting 8, but it doesn't consistently recognize it as a specific digit. It is frequently misidentified as 1, 2, 3, and 5. The digit 5 has a similarly low recall, but when it is misidentified, the classifier most often predicts it as a 4.&lt;/p&gt;
 &lt;p&gt;Using this information, we could make an attempt at feature engineering. We could also adjust some of the parameters of the model. However, this seems like a poor use of time compared to trying other machine learning algorithms.&lt;/p&gt;
-&lt;h3 id="K-Nearest-Neighbors"&gt;K Nearest Neighbors&lt;a class="anchor-link" href="#K-Nearest-Neighbors"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Our next algorithm will be k-Nearest Neighbors. First I choose an arbitrary value for the number of neighbors. Next I go through a loop and plot the error rate for different k values. This allows us to choose the best k.&lt;/p&gt;
+&lt;h3 id="K-Nearest-Neighbors"&gt;K-Nearest Neighbors&lt;a class="anchor-link" href="#K-Nearest-Neighbors"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Our next algorithm will be k-Nearest Neighbors. First I choose an arbitrary value for the number of neighbors. Next I go through a loop and plot the error rate for different k values. This allows us to choose the best k.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2088,7 +2088,7 @@ avg / total       0.95      0.95      0.95      5000
 &lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Even with a guess at the k value, this is already a slight improvement over logistic regression. It looks like 8 remains hard to classify, and this classifier seems to predict 1 fairly often, espcially for 2, 4, 7, and 8. The biggest problem with this method versus logistic regression is that it takes substantially longer to make a prediction. This is because for each example you want to predict, the algorithm has to compute the distance to all 50,000 training examples! Depending on the context, this trade-off may be worth the improved accuracy. Although as we'll see later, there are algorithms with better accuracy and shorter run times.&lt;/p&gt;
+&lt;p&gt;Even with a guess at the k value, this is already a slight improvement over logistic regression. It looks like 8 remains hard to classify, and this classifier seems to predict 1 fairly often, especially for 2, 4, 7, and 8. The biggest problem with this method versus logistic regression is that it takes substantially longer to make a prediction. This is because for each example you want to predict, the algorithm has to compute the distance to all 50,000 training examples! Depending on the context, this trade-off may be worth the improved accuracy. Although as we'll see later, there are algorithms with better accuracy and shorter run times.&lt;/p&gt;
 &lt;p&gt;Despite this problem, let's run the fit and predict functions for a number of different k values to see which offers the best performance on the validation set.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2666,7 +2666,7 @@ avg / total       0.95      0.95      0.95      5000
 &lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;After the high accuracy and relatively short running time of a random forest, the support vector machine offers slower run times and lower accuracy.&lt;/p&gt;
-&lt;h2 id="Conclusion"&gt;Conclusion&lt;a class="anchor-link" href="#Conclusion"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;So far I've trained four different classifiers on the training data (five if you cound the single decision tree), and when comparing their accuracy, a random forest offers the highest accuracy on the validation set, at 97.3%. However, because we've specifically selected the model that best performs on the validation set this may not hold true for the test set. Let's check how it does.&lt;/p&gt;
+&lt;h2 id="Conclusion"&gt;Conclusion&lt;a class="anchor-link" href="#Conclusion"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;So far I've trained four different classifiers on the training data (five if you count the single decision tree), and when comparing their accuracy, a random forest offers the highest accuracy on the validation set, at 97.3%. However, because we've specifically selected the model that best performs on the validation set this may not hold true for the test set. Let's check how it does.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2720,6 +2720,15 @@ avg / total       0.97      0.97      0.97     10000
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;As expected, the performance is slightly worse on the test set. However, 96.9% is still quite good, especially for a fairly simple classifier. Decision Tress have the benefit of being easy to explain, even to people without machine learning knowledge, and the conceptual leap to a random forest is not that large.&lt;/p&gt;
+&lt;p&gt;In a future post, I will use the power of TensorFlow to develop a neural network and fine tune the model parameters to see how much more accuracy we can achieve.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
