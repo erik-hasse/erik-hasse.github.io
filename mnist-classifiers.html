@@ -1,52 +1,91 @@
-<!doctype html>
-<html lang="">	
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8"/>
-	<title>MNIST Classifiers - Erik Hasse's Portfolio</title>	
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-	<meta name="author" content="Erik Hasse" />
-	<meta name="copyright" content="Erik Hasse" />
+    <link rel="stylesheet" type="text/css" href="https://erik-hasse.github.io/theme/stylesheet/style.min.css">
 
-	<meta property="og:site_name" content="Erik Hasse's Portfolio" />
+  <link rel="stylesheet" type="text/css" href="https://erik-hasse.github.io/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="https://erik-hasse.github.io/theme/font-awesome/css/font-awesome.min.css">
 
 
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="MNIST Classifiers" />
-	<meta name="date" content="2018-03-06 20:00:00-06:00" />
-	<meta property="og:type" content="article" />
-	<meta property="og:locale" content="en" />
-	<meta property="og:published_time" content="2018-03-06 20:00:00-06:00" />
-	<meta property="og:title" content="MNIST Classifiers" />
-	<meta property="og:url" content="https://erik-hasse.github.io/mnist-classifiers.html" />
-	<meta property="og:description" content="Comparing Classifiers on the MNIST Dataset¶Erik Hasse¶The well known MNIST dataset presents a large set of handwritten, greyscale digits. The goal is to use machine learning to identify which digit is pictured. The source used here presents each example as a 784 element vector. Each component of the vector is between 0 and 1. Other sources may provide a different format, but the underlying concepts remain the same." />
-	<meta name="description" content="Comparing Classifiers on the MNIST Dataset¶Erik Hasse¶The well known MNIST dataset presents a large set of handwritten, greyscale digits. The goal is to use machine learning to identify which digit is pictured. The source used here presents each example as a 784 element vector. Each component of the vector is between 0 and 1. Other sources may provide a different format, but the underlying concepts remain the same." />
+    <link href="https://erik-hasse.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Erik Hasse's Portfolio Atom">
 
-	<meta name="HandheldFriendly" content="True" />
-	<meta name="MobileOptimized" content="320" />
-	<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0" />
-	<link rel="shortcut icon" href="https://erik-hasse.github.io/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="https://erik-hasse.github.io/favicon.ico" type="image/x-icon" />
-	<link href='https://fonts.googleapis.com/css?family=Droid+Sans:700,400|Droid+Sans+Mono' rel='stylesheet' type='text/css' />
-	<link rel="stylesheet" href="https://erik-hasse.github.io/theme/css/main.css" type="text/css" />
-		
-	<!--[if lt IE 9]>
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Erik Hasse" />
+<meta name="description" content="Comparing Classifiers on the MNIST Dataset¶Erik Hasse¶The well known MNIST dataset presents a large set of handwritten, greyscale digits. The goal is to use machine learning to identify which digit is pictured. The source used here presents each example as a 784 element vector. Each component of the vector is between 0 and 1. Other sources may provide a different format, but the underlying concepts remain the same." />
+<meta name="keywords" content="python, jupyter notebook, machine learning, mnist">
+<meta property="og:site_name" content="Erik Hasse's Portfolio"/>
+<meta property="og:title" content="MNIST Classifiers"/>
+<meta property="og:description" content="Comparing Classifiers on the MNIST Dataset¶Erik Hasse¶The well known MNIST dataset presents a large set of handwritten, greyscale digits. The goal is to use machine learning to identify which digit is pictured. The source used here presents each example as a 784 element vector. Each component of the vector is between 0 and 1. Other sources may provide a different format, but the underlying concepts remain the same."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://erik-hasse.github.io/mnist-classifiers.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-03-06 20:00:00-06:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://erik-hasse.github.io/author/erik-hasse.html">
+<meta property="article:section" content="posts"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="jupyter notebook"/>
+<meta property="article:tag" content="machine learning"/>
+<meta property="article:tag" content="mnist"/>
+<meta property="og:image" content="">
+
+  <title>Erik Hasse's Portfolio &ndash; MNIST Classifiers</title>
+
 </head>
-	
-<body>		
-	<header class="clearfix" role="banner">
-		<div class="wrapper">
-			<h1 class="huge"><a href="https://erik-hasse.github.io">Erik Hasse's Portfolio</a></h1>
-		</div>
-	</header>
-	
-<div role="main" class="content clearfix">	
-	<article>
-		<div class="post wrapper">
-			<h1>MNIST Classifiers</h1>
-			<style type="text/css">/*!
+<body>
+  <aside>
+    <div>
+      <a href="https://erik-hasse.github.io">
+        <img src="https://erik-hasse.github.io/theme/img/profile.png" alt="" title="">
+      </a>
+      <h1><a href="https://erik-hasse.github.io"></a></h1>
+
+
+      <nav>
+        <ul class="list">
+
+          <li><a href="http://getpelican.com/" target="_blank">Pelican</a></li>
+          <li><a href="http://python.org/" target="_blank">Python.org</a></li>
+          <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a></li>
+          <li><a href="#" target="_blank">You can modify those links in your config file</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-You can add links in your config file" href="#" target="_blank"><i class="fa fa-You can add links in your config file"></i></a></li>
+        <li><a class="sc-Another social link" href="#" target="_blank"><i class="fa fa-Another social link"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="mnist-classifiers">MNIST Classifiers</h1>
+    <p>
+          Posted on Tue 06 March 2018 in <a href="https://erik-hasse.github.io/category/posts.html">posts</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -2795,43 +2834,40 @@ avg / total       0.97      0.97      0.97     10000
 }
 </script>
 
-			
-			<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-						
-			
-		</div>
-	
-<div class="meta wrapper">
-	<time datetime="2018-03-06T20:00:00-06:00" pubdate>Tue 06 March 2018</time>
-	<ul class="tag clearfix">
-		<li><a href="https://erik-hasse.github.io/category/posts.html">posts</a></li>
-		<li><a href="https://erik-hasse.github.io/tag/python.html">python</a></li>
-		<li><a href="https://erik-hasse.github.io/tag/jupyter-notebook.html">jupyter notebook</a></li>
-		<li><a href="https://erik-hasse.github.io/tag/machine-learning.html">machine learning</a></li>
-		<li><a href="https://erik-hasse.github.io/tag/mnist.html">mnist</a></li>
-	</ul>
-</div>	</article>	
-</div>
-	
-		
-<footer class="clearfix">
-	<div class="wrapper pages">
-		<ul class="nav">
-			<li><a href="https://erik-hasse.github.io/archives.html">Archive</a></li>
-		</ul>
-	</div>
-	
-	<div class="copy wrapper">
-		<ul class="social">
-			<li><a href="#">You can add links in your config file</a></li>
-			<li><a href="#">Another social link</a></li>
-		</ul>
-	
-		<p role="contentinfo">		© 2017 Erik Hasse
-<br>
-		Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a>.</p>
-	</div>
-</footer>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="https://erik-hasse.github.io/tag/python.html">python</a>
+      <a href="https://erik-hasse.github.io/tag/jupyter-notebook.html">jupyter notebook</a>
+      <a href="https://erik-hasse.github.io/tag/machine-learning.html">machine learning</a>
+      <a href="https://erik-hasse.github.io/tag/mnist.html">mnist</a>
+    </p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Erik Hasse </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Erik Hasse's Portfolio ",
+  "url" : "https://erik-hasse.github.io",
+  "image": "",
+  "description": ""
+}
+</script>
 </body>
 </html>
