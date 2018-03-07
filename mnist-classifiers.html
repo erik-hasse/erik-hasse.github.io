@@ -1,43 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="">	
 <head>
-          <title>Erik Hasse's Portfolio</title>
-        <meta charset="utf-8" />
-        <link href="http://erik-hasse.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Erik Hasse's Portfolio Full Atom Feed" />
-        <link href="http://erik-hasse.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Erik Hasse's Portfolio Categories Atom Feed" />
+	<meta charset="utf-8"/>
+	<title>MNIST Classifiers - Erik Hasse's Portfolio</title>	
+
+	<meta name="author" content="Erik Hasse" />
+	<meta name="copyright" content="Erik Hasse" />
+
+	<meta property="og:site_name" content="Erik Hasse's Portfolio" />
 
 
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="MNIST Classifiers" />
+	<meta name="date" content="2018-03-06 20:00:00-06:00" />
+	<meta property="og:type" content="article" />
+	<meta property="og:locale" content="en" />
+	<meta property="og:published_time" content="2018-03-06 20:00:00-06:00" />
+	<meta property="og:title" content="MNIST Classifiers" />
+	<meta property="og:url" content="http://erik-hasse.github.io/mnist-classifiers.html" />
+	<meta property="og:description" content="Comparing Classifiers on the MNIST Dataset¶Erik Hasse¶The well known MNIST dataset presents a large set of handwritten, greyscale digits. The goal is to use machine learning to identify which digit is pictured. The source used here presents each example as a 784 element vector. Each component of the vector is between 0 and 1. Other sources may provide a different format, but the underlying concepts remain the same." />
+	<meta name="description" content="Comparing Classifiers on the MNIST Dataset¶Erik Hasse¶The well known MNIST dataset presents a large set of handwritten, greyscale digits. The goal is to use machine learning to identify which digit is pictured. The source used here presents each example as a 784 element vector. Each component of the vector is between 0 and 1. Other sources may provide a different format, but the underlying concepts remain the same." />
 
-    <meta name="tags" content="python" />
-    <meta name="tags" content="jupyter notebook" />
-    <meta name="tags" content="machine learning" />
-    <meta name="tags" content="mnist" />
-
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0" />
+	<link rel="shortcut icon" href="http://erik-hasse.github.io/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="http://erik-hasse.github.io/favicon.ico" type="image/x-icon" />
+	<link href='https://fonts.googleapis.com/css?family=Droid+Sans:700,400|Droid+Sans+Mono' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="http://erik-hasse.github.io/theme/css/main.css" type="text/css" />
+		
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
 </head>
-
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://erik-hasse.github.io/">Erik Hasse's Portfolio <strong></strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-        </ul></nav><!-- /#menu -->
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="http://erik-hasse.github.io/mnist-classifiers.html" rel="bookmark"
-         title="Permalink to MNIST Classifiers">MNIST Classifiers</a></h2>
- 
-  </header>
-  <footer class="post-info">
-    <abbr class="published" title="2018-03-06T20:00:00-06:00">
-      Tue 06 March 2018
-    </abbr>
-    <address class="vcard author">
-      By           <a class="url fn" href="http://erik-hasse.github.io/author/erik-hasse.html">Erik Hasse</a>
-    </address>
-  </footer><!-- /.post-info -->
-  <div class="entry-content">
-    <style type="text/css">/*!
+	
+<body>		
+	<header class="clearfix" role="banner">
+		<div class="wrapper">
+			<h1 class="huge"><a href="http://erik-hasse.github.io">Erik Hasse's Portfolio</a></h1>
+		</div>
+	</header>
+	
+<div role="main" class="content clearfix">	
+	<article>
+		<div class="post wrapper">
+			<h1>MNIST Classifiers</h1>
+			<style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -2786,13 +2795,43 @@ avg / total       0.97      0.97      0.97     10000
 }
 </script>
 
-  </div><!-- /.entry-content -->
-</section>
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
+			
+			<a href="https://twitter.com/share" class="twitter-share-button" data-via="" data-lang="en" data-size="large" data-related="">Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						
+			
+		</div>
+	
+<div class="meta wrapper">
+	<time datetime="2018-03-06T20:00:00-06:00" pubdate>Tue 06 March 2018</time>
+	<ul class="tag clearfix">
+		<li><a href="http://erik-hasse.github.io/category/posts.html">posts</a></li>
+		<li><a href="http://erik-hasse.github.io/tag/python.html">python</a></li>
+		<li><a href="http://erik-hasse.github.io/tag/jupyter-notebook.html">jupyter notebook</a></li>
+		<li><a href="http://erik-hasse.github.io/tag/machine-learning.html">machine learning</a></li>
+		<li><a href="http://erik-hasse.github.io/tag/mnist.html">mnist</a></li>
+	</ul>
+</div>	</article>	
+</div>
+	
+		
+<footer class="clearfix">
+	<div class="wrapper pages">
+		<ul class="nav">
+			<li><a href="http://erik-hasse.github.io/archives.html">Archive</a></li>
+		</ul>
+	</div>
+	
+	<div class="copy wrapper">
+		<ul class="social">
+			<li><a href="#">You can add links in your config file</a></li>
+			<li><a href="#">Another social link</a></li>
+		</ul>
+	
+		<p role="contentinfo">		© 2017 Erik Hasse
+<br>
+		Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a>.</p>
+	</div>
+</footer>
 </body>
 </html>

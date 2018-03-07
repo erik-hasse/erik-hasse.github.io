@@ -1,28 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="">	
 <head>
-        <title>Erik Hasse's Portfolio</title>
-        <meta charset="utf-8" />
-        <link href="http://erik-hasse.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Erik Hasse's Portfolio Full Atom Feed" />
+	<meta charset="utf-8"/>
+	<title>Archive - Erik Hasse's Portfolio</title>	
+
+	<meta name="author" content="Erik Hasse" />
+	<meta name="copyright" content="Erik Hasse" />
+
+	<meta property="og:site_name" content="Erik Hasse's Portfolio" />
+
+
+
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0" />
+	<link rel="shortcut icon" href="http://erik-hasse.github.io/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="http://erik-hasse.github.io/favicon.ico" type="image/x-icon" />
+	<link href='https://fonts.googleapis.com/css?family=Droid+Sans:700,400|Droid+Sans+Mono' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="http://erik-hasse.github.io/theme/css/main.css" type="text/css" />
+		
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 </head>
+	
+<body>		
+	<header class="clearfix" role="banner">
+		<div class="wrapper">
+			<h1 class="huge"><a href="http://erik-hasse.github.io">Erik Hasse's Portfolio</a></h1>
+		</div>
+	</header>
+	
+<div role="main" class="content clearfix">
+<div id="jquerytabs" class="wrapper main">
+	<ul class="tabmenu clearfix">
+		<li><a href="#fecha">By date</a></li>
+		<li><a href="#etiqueta">By topic</a></li>
+	</ul>
+	
+	<div id="fecha">	
+	
+		<h2>2018</h2>
+		<ol class="archive">
+			<li class="clearfix"><a href="mnist-classifiers.html"><time datetime="2018-03-06T20:00:00-06:00" pubdate>Tue 06 March 2018</time> MNIST Classifiers</a></li>
+		</ol>
+	</div>
+	
+	<div id="etiqueta">
+		<h2>Tags</h2>
+		<ul class="tag">
+		</ul>
+	</div>
+		
+</div>
+</div>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://erik-hasse.github.io/">Erik Hasse's Portfolio <strong></strong></a></h1>
-        </header><!-- /#banner -->
-        <nav id="menu"><ul>
-        </ul></nav><!-- /#menu -->
-<h1>Archives for Erik Hasse's Portfolio</h1>
-
-<dl>
-    <dt>Tue 06 March 2018</dt>
-    <dd><a href="http://erik-hasse.github.io/mnist-classifiers.html">MNIST Classifiers</a></dd>
-</dl>
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
+<script>
+	$(function() {
+		$("#jquerytabs").tabs();
+	});
+</script>
+	
+		
+<footer class="clearfix">
+	<div class="wrapper pages">
+		<ul class="nav">
+			<li><a href="http://erik-hasse.github.io/archives.html">Archive</a></li>
+		</ul>
+	</div>
+	
+	<div class="copy wrapper">
+		<ul class="social">
+			<li><a href="#">You can add links in your config file</a></li>
+			<li><a href="#">Another social link</a></li>
+		</ul>
+	
+		<p role="contentinfo">		© 2017 Erik Hasse
+<br>
+		Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a>.</p>
+	</div>
+</footer>
 </body>
 </html>
