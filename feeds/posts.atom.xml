@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Erik Hasse's Portfolio</title><link href="http://erik-hasse.github.io/" rel="alternate"></link><link href="http://erik-hasse.github.io/feeds/posts.atom.xml" rel="self"></link><id>http://erik-hasse.github.io/</id><updated>2018-03-06T20:00:00-06:00</updated><entry><title>MNIST Classifiers</title><link href="http://erik-hasse.github.io/mnist-classifiers.html" rel="alternate"></link><published>2018-03-06T20:00:00-06:00</published><updated>2018-03-06T20:00:00-06:00</updated><author><name>Erik Hasse</name></author><id>tag:erik-hasse.github.io,2018-03-06:mnist-classifiers.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Erik Hasse's Portfolio - posts</title><link href="http://erik-hasse.github.io/" rel="alternate"></link><link href="http://erik-hasse.github.io/feeds/posts.atom.xml" rel="self"></link><id>http://erik-hasse.github.io/</id><updated>2018-03-06T20:00:00-06:00</updated><entry><title>MNIST Classifiers</title><link href="http://erik-hasse.github.io/mnist-classifiers.html" rel="alternate"></link><published>2018-03-06T20:00:00-06:00</published><updated>2018-03-06T20:00:00-06:00</updated><author><name>Erik Hasse</name></author><id>tag:erik-hasse.github.io,2018-03-06:/mnist-classifiers.html</id><summary type="html">
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h1 id="Comparing-Classifiers-on-the-MNIST-Dataset"&gt;Comparing Classifiers on the MNIST Dataset&lt;a class="anchor-link" href="#Comparing-Classifiers-on-the-MNIST-Dataset"&gt;¶&lt;/a&gt;&lt;/h1&gt;&lt;h3 id="Erik-Hasse"&gt;Erik Hasse&lt;a class="anchor-link" href="#Erik-Hasse"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The well known MNIST dataset presents a large set of handwritten, greyscale digits. The goal is to use machine learning to identify which digit is pictured. The source used here presents each example as a 784 element vector. Each component of the vector is between 0 and 1. Other sources may provide a different format, but the underlying concepts remain the same.&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
@@ -2747,4 +2752,4 @@ avg / total       0.97      0.97      0.97     10000
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;
-</summary><category term="python"></category><category term="jupyter notebook"></category><category term="machine learning"></category><category term="mnist"></category></entry></feed>
+</content><category term="python"></category><category term="jupyter notebook"></category><category term="machine learning"></category><category term="mnist"></category></entry></feed>
