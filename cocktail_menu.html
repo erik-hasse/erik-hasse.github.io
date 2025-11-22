@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ open: null }">
+<html lang="en" x-data="{ modalOpen: false, modalDrink: null }">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,146 +8,196 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/alpinejs" defer></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Dynalight&display=swap" rel="stylesheet">
 
   <style>
-    .header-font { font-family: 'Aleo', serif; }
+    .header-font { font-family: 'Dynalight', serif; }
     .drink-title { font-family: 'Aleo', serif; font-weight: 600; }
     .drink-subtitle { font-family: 'Aleo', serif; font-style: italic; }
 
-    /* Custom tweakable styles */
-    .short-ingredients { font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.5px; color: #0CA5B0; }
-    .full-ingredients { font-family: 'Inter', sans-serif; color: #333; }
+    .short-ingredients {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      color: #0CA5B0;
+    }
+
+    .full-ingredients {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+    }
 
     body { background-attachment: fixed; }
   </style>
 </head>
 
 <body class="min-h-screen bg-cover bg-center bg-fixed" style="background-image: url('background.jpg');">
-  <div class="bg-white/90 max-w-3xl mx-auto my-8 p-6 rounded-xl shadow-lg">
+  <div class="bg-white/90 backdrop-blur-sm max-w-xl mx-auto my-8 p-6 rounded-xl shadow-lg">
     <h1 class="header-font text-5xl text-center mb-10">Cocktails</h1>
 
     <div class="space-y-10">
 
-      <!-- DRINK TEMPLATE EXAMPLE -->
-      <!-- Each drink uses :class to toggle visibility based on open===index -->
+      <!-- DRINK CARD TEMPLATE -->
+      <!-- Instead of expanders, we pass drink data into modalDrink and open modal -->
 
       <!-- AUTUMN DAIQUIRI -->
-      <div class="cursor-pointer" @click="open = open === 1 ? null : 1">
+      <div
+        class="cursor-pointer"
+        @click="modalDrink = {
+          name: 'Autumn Daiquiri',
+          subtitle: 'WARMING AND TROPICAL',
+          ingredients: [
+            '2 oz gold rum',
+            '½ oz lime juice',
+            '½ oz pineapple juice',
+            '¼ oz cinnamon syrup',
+            '¼ oz demerara syrup',
+            '1 dash Angostura bitters'
+          ],
+          instructions: 'Shake and strain into a coupe glass.'
+        }; modalOpen = true"
+      >
         <h2 class="drink-title text-center text-2xl tracking-wide">AUTUMN DAIQUIRI</h2>
         <p class="drink-subtitle text-center">WARMING AND TROPICAL</p>
         <p class="short-ingredients text-center">Gold rum, lime, pineapple, cinnamon, demerara, bitters</p>
-        <div x-show="open === 1" class="mt-3 text-sm full-ingredients" x-collapse>
-          <ul class="list-disc list-inside">
-            <li>2 oz gold rum</li>
-            <li>½ oz lime juice</li>
-            <li>½ oz pineapple juice</li>
-            <li>¼ oz cinnamon syrup</li>
-            <li>¼ oz demerara syrup</li>
-            <li>1 dash Angostura bitters</li>
-          </ul>
-          <div class="mt-2">
-            Shake and strain into a coupe glass.
-          </div>
-
-        </div>
       </div>
 
       <!-- JET PILOT -->
-      <div class="cursor-pointer" @click="open = open === 2 ? null : 2">
+      <div
+        class="cursor-pointer"
+        @click="modalDrink = {
+          name: 'Jet Pilot',
+          subtitle: 'INTENSE AND SPICED',
+          ingredients: [
+            '2½ oz Zombie blend rum',
+            '½ oz falernum',
+            '½ oz lime juice',
+            '½ oz grapefruit juice',
+            '½ oz cinnamon syrup',
+            '1 dash Angostura bitters',
+            '4 drops absinthe'
+          ],
+          instructions: 'Shake and pour into a double old fashioned glass with the ice.'
+        }; modalOpen = true"
+      >
         <h2 class="drink-title text-center text-2xl tracking-wide">JET PILOT</h2>
         <p class="drink-subtitle text-center">INTENSE AND SPICED</p>
         <p class="short-ingredients text-center">Dark & overproof rum, lime, cinnamon, falernum, bitters, absinthe</p>
-        <div x-show="open === 2" class="mt-3 text-sm full-ingredients" x-collapse>
-          <ul class="list-disc list-inside">
-            <li>2½ oz Zombie blend rum</li>
-            <li>½ oz falernum</li>
-            <li>½ oz lime juice</li>
-            <li>½ oz grapefruit juice</li>
-            <li>½ oz cinnamon syrup</li>
-            <li>1 dash Angostura bitters</li>
-            <li>4 drops absinthe</li>
-          </ul>
-          <div class="mt-2">
-            Shake and pour into a double old fashioned glass with the ice
-          </div>
-        </div>
       </div>
 
       <!-- LAST WORD -->
-      <div class="cursor-pointer" @click="open = open === 3 ? null : 3">
+      <div
+        class="cursor-pointer"
+        @click="modalDrink = {
+          name: 'Last Word',
+          subtitle: 'HERBAL AND ELECTRIC',
+          ingredients: [
+            '¾ oz gin',
+            '¾ oz green Chartreuse',
+            '¾ oz maraschino liqueur',
+            '¾ oz lime juice'
+          ],
+          instructions: 'Shake and strain into a coupe glass.'
+        }; modalOpen = true"
+      >
         <h2 class="drink-title text-center text-2xl tracking-wide">LAST WORD</h2>
         <p class="drink-subtitle text-center">HERBAL AND ELECTRIC</p>
         <p class="short-ingredients text-center">Gin, green Chartreuse, maraschino, lime</p>
-        <div x-show="open === 3" class="mt-3 text-sm full-ingredients" x-collapse>
-          <ul class="list-disc list-inside">
-            <li>¾ oz gin</li>
-            <li>¾ oz green Chartreuse</li>
-            <li>¾ oz maraschino liqueur</li>
-            <li>¾ oz lime juice</li>
-          </ul>
-          <div class="mt-2">
-            Shake and strain into a coupe glass.
-          </div>
-        </div>
       </div>
 
       <!-- PAPER PLANE -->
-      <div class="cursor-pointer" @click="open = open === 4 ? null : 4">
+      <div
+        class="cursor-pointer"
+        @click="modalDrink = {
+          name: 'Paper Plane',
+          subtitle: 'BRIGHT AND BITTERSWEET',
+          ingredients: [
+            '1 oz bourbon',
+            '1 oz Aperol',
+            '1 oz Amaro Nonino',
+            '1 oz lemon juice'
+          ],
+          instructions: 'Shake and strain into a coupe glass.'
+        }; modalOpen = true"
+      >
         <h2 class="drink-title text-center text-2xl tracking-wide">PAPER PLANE</h2>
         <p class="drink-subtitle text-center">BRIGHT AND BITTERSWEET</p>
         <p class="short-ingredients text-center">Bourbon, Aperol, Amaro Nonino, lemon</p>
-        <div x-show="open === 4" class="mt-3 text-sm full-ingredients" x-collapse>
-          <ul class="list-disc list-inside">
-            <li>1 oz bourbon</li>
-            <li>1 oz Aperol</li>
-            <li>1 oz Amaro Nonino</li>
-            <li>1 oz lemon juice</li>
-          </ul>
-          <div class="mt-2">
-            Shake and strain into a coupe glass.
-          </div>
-        </div>
       </div>
 
       <!-- OAXACA OLD FASHIONED -->
-      <div class="cursor-pointer" @click="open = open === 5 ? null : 5">
+      <div
+        class="cursor-pointer"
+        @click="modalDrink = {
+          name: 'Oaxaca Old Fashioned',
+          subtitle: 'BOOZY AND SMOKY',
+          ingredients: [
+            '1½ oz tequila',
+            '½ oz mezcal',
+            '1 tsp agave syrup',
+            '2 dashes Angostura bitters'
+          ],
+          instructions: 'Stir with ice and strain into a rocks glass over a large ice cube.'
+        }; modalOpen = true"
+      >
         <h2 class="drink-title text-center text-2xl tracking-wide">OAXACA OLD FASHIONED</h2>
         <p class="drink-subtitle text-center">BOOZY AND SMOKY</p>
         <p class="short-ingredients text-center">Tequila, mezcal, agave, bitters</p>
-        <div x-show="open === 5" class="mt-3 text-sm full-ingredients" x-collapse>
-          <ul class="list-disc list-inside">
-            <li>1½ oz tequila</li>
-            <li>½ oz mezcal</li>
-            <li>1 tsp agave syrup</li>
-            <li>2 dashes Angostura bitters</li>
-          </ul>
-          <div class="mt-2">
-            Stir with ice and strain into a rocks glass over a large ice cube.
-          </div>
-        </div>
       </div>
 
       <!-- GOLDEN HOUR -->
-      <div class="cursor-pointer" @click="open = open === 6 ? null : 6">
+      <div
+        class="cursor-pointer"
+        @click="modalDrink = {
+          name: 'Golden Hour',
+          subtitle: 'NON-ALCOHOLIC · VIBRANT AND SPICED',
+          ingredients: [
+            '2 oz pineapple',
+            '¾ oz lime juice',
+            '½ oz cinnamon syrup',
+            '¼ oz demerara',
+            '6 drops tiki bitters (optional)'
+          ],
+          instructions: 'Shake and pour into a highball glass with the ice.'
+        }; modalOpen = true"
+      >
         <h2 class="drink-title text-center text-2xl tracking-wide">GOLDEN HOUR</h2>
         <p class="drink-subtitle text-center">NON-ALCOHOLIC · VIBRANT AND SPICED</p>
         <p class="short-ingredients text-center">Pineapple, lime, cinnamon, demerara</p>
-        <div x-show="open === 6" class="mt-3 text-sm full-ingredients" x-collapse>
-          <ul class="list-disc list-inside">
-            <li>2 oz pineapple</li>
-            <li>¾ oz lime juice</li>
-            <li>½ oz cinnamon syrup</li>
-            <li>¼ oz demerara</li>
-            <li>6 drops tiki bitters <em>(Optional, omit for fully NA)</em></li>
-          </ul>
-          <div class="mt-2">
-            Shake and pour into a highball glass with the ice
-          </div>
-        </div>
       </div>
 
     </div>
   </div>
+
+  <!-- MODAL -->
+  <div
+    x-show="modalOpen"
+    x-transition.opacity
+    class="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50"
+    @click.self="modalOpen = false"
+  >
+    <div class="bg-white/95 rounded-xl p-6 max-w-md w-full shadow-xl">
+      <h2 class="drink-title text-3xl text-center mb-2" x-text="modalDrink?.name"></h2>
+      <p class="drink-subtitle text-center mb-4" x-text="modalDrink?.subtitle"></p>
+
+      <ul class="full-ingredients list-disc list-inside space-y-1 text-lg">
+        <template x-for="item in modalDrink.ingredients">
+          <li x-text="item"></li>
+        </template>
+      </ul>
+
+      <p class="full-ingredients mt-4 text-lg" x-text="modalDrink?.instructions"></p>
+
+      <button
+        class="mt-6 block mx-auto px-6 py-2 rounded-lg bg-sky-600 text-white text-lg"
+        @click="modalOpen = false"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+
 </body>
 </html>
