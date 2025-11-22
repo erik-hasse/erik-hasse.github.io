@@ -27,6 +27,7 @@
     .full-ingredients {
       font-family: 'Inter', sans-serif;
       color: #333;
+      font-size: 2rem;
     }
 
     body { background-attachment: fixed; }
@@ -172,32 +173,32 @@
   </div>
 
   <!-- MODAL -->
-  <div
-    x-show="modalOpen"
-    x-transition.opacity
-    class="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50"
-    @click.self="modalOpen = false"
-  >
-    <div class="bg-white/95 rounded-xl p-6 max-w-md w-full shadow-xl">
-      <h2 class="drink-title text-3xl text-center mb-2" x-text="modalDrink?.name"></h2>
-      <p class="drink-subtitle text-center mb-4" x-text="modalDrink?.subtitle"></p>
+<div
+  x-show="modalOpen"
+  x-transition.opacity
+  class="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50"
+  @click.self="modalOpen = false"
+>
+  <div class="bg-white/95 rounded-xl p-6 w-full max-w-md max-h-[calc(100vh-4rem)] overflow-y-auto shadow-xl">
+    <h2 class="drink-title text-3xl text-center mb-2" x-text="modalDrink?.name"></h2>
+    <p class="drink-subtitle text-center mb-4" x-text="modalDrink?.subtitle"></p>
 
-      <ul class="full-ingredients list-disc list-inside space-y-1 text-lg">
-        <template x-for="item in modalDrink.ingredients">
-          <li x-text="item"></li>
-        </template>
-      </ul>
+    <ul class="full-ingredients list-disc list-inside space-y-2">
+      <template x-for="item in modalDrink.ingredients">
+        <li x-text="item"></li>
+      </template>
+    </ul>
 
-      <p class="full-ingredients mt-4 text-lg" x-text="modalDrink?.instructions"></p>
+    <p class="full-ingredients mt-4" x-text="modalDrink?.instructions"></p>
 
-      <button
-        class="mt-6 block mx-auto px-6 py-2 rounded-lg bg-sky-600 text-white text-lg"
-        @click="modalOpen = false"
-      >
-        Close
-      </button>
-    </div>
+    <button
+      class="mt-6 block mx-auto px-6 py-2 rounded-lg bg-sky-600 text-white text-lg"
+      @click="modalOpen = false"
+    >
+      Close
+    </button>
   </div>
+</div>
 
 </body>
 </html>
