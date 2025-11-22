@@ -1,52 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" x-data="{ modalOpen: false, modalDrink: null }">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cocktails</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cocktails</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/alpinejs" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Dynalight&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Dynalight&display=swap"
+          rel="stylesheet">
 
-  <style>
-    .header-font { font-family: 'Dynalight', serif; }
-    .drink-title { font-family: 'Aleo', serif; font-weight: 600; }
-    .drink-subtitle { font-family: 'Aleo', serif; font-style: italic; }
+    <style>
+        .header-font {
+            font-family: 'Dynalight', serif;
+        }
 
-    .short-ingredients {
-      font-family: 'Inter', sans-serif;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-      color: #0CA5B0;
-    }
+        .drink-title {
+            font-family: 'Aleo', serif;
+            font-weight: 600;
+        }
 
-    .full-ingredients {
-      font-family: 'Inter', sans-serif;
-      color: #333;
-      font-size: 2rem;
-    }
+        .drink-subtitle {
+            font-family: 'Aleo', serif;
+            font-style: italic;
+        }
 
-    body { background-attachment: fixed; }
-  </style>
+        .short-ingredients {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: #0CA5B0;
+        }
+
+        .full-ingredients {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            font-size: 2rem;
+        }
+
+        body {
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 
 <body class="min-h-screen bg-cover bg-center bg-fixed" style="background-image: url('background.jpg');">
-  <div class="bg-white/90 backdrop-blur-sm max-w-xl mx-auto my-8 p-6 rounded-xl shadow-lg">
+<div class="bg-white/90 backdrop-blur-sm max-w-xl mx-auto my-8 p-6 rounded-xl shadow-lg">
     <h1 class="header-font text-5xl text-center mb-10">Cocktails</h1>
 
     <div class="space-y-10">
 
-      <!-- DRINK CARD TEMPLATE -->
-      <!-- Instead of expanders, we pass drink data into modalDrink and open modal -->
+        <!-- DRINK CARD TEMPLATE -->
+        <!-- Instead of expanders, we pass drink data into modalDrink and open modal -->
 
-      <!-- AUTUMN DAIQUIRI -->
-      <div
-        class="cursor-pointer"
-        @click="modalDrink = {
+        <!-- AUTUMN DAIQUIRI -->
+        <div
+                class="cursor-pointer"
+                @click="modalDrink = {
           name: 'Autumn Daiquiri',
           subtitle: 'WARMING AND TROPICAL',
           ingredients: [
@@ -59,16 +72,16 @@
           ],
           instructions: 'Shake and strain into a coupe glass.'
         }; modalOpen = true"
-      >
-        <h2 class="drink-title text-center text-2xl tracking-wide">AUTUMN DAIQUIRI</h2>
-        <p class="drink-subtitle text-center">WARMING AND TROPICAL</p>
-        <p class="short-ingredients text-center">Gold rum, lime, pineapple, cinnamon, demerara, bitters</p>
-      </div>
+        >
+            <h2 class="drink-title text-center text-2xl tracking-wide">AUTUMN DAIQUIRI</h2>
+            <p class="drink-subtitle text-center">WARMING AND TROPICAL</p>
+            <p class="short-ingredients text-center">Gold rum, lime, pineapple, cinnamon, demerara, bitters</p>
+        </div>
 
-      <!-- JET PILOT -->
-      <div
-        class="cursor-pointer"
-        @click="modalDrink = {
+        <!-- JET PILOT -->
+        <div
+                class="cursor-pointer"
+                @click="modalDrink = {
           name: 'Jet Pilot',
           subtitle: 'INTENSE AND SPICED',
           ingredients: [
@@ -82,16 +95,17 @@
           ],
           instructions: 'Shake and pour into a double old fashioned glass with the ice.'
         }; modalOpen = true"
-      >
-        <h2 class="drink-title text-center text-2xl tracking-wide">JET PILOT</h2>
-        <p class="drink-subtitle text-center">INTENSE AND SPICED</p>
-        <p class="short-ingredients text-center">Dark & overproof rum, lime, cinnamon, falernum, bitters, absinthe</p>
-      </div>
+        >
+            <h2 class="drink-title text-center text-2xl tracking-wide">JET PILOT</h2>
+            <p class="drink-subtitle text-center">INTENSE AND SPICED</p>
+            <p class="short-ingredients text-center">Dark & overproof rum, lime, cinnamon, falernum, bitters,
+                absinthe</p>
+        </div>
 
-      <!-- LAST WORD -->
-      <div
-        class="cursor-pointer"
-        @click="modalDrink = {
+        <!-- LAST WORD -->
+        <div
+                class="cursor-pointer"
+                @click="modalDrink = {
           name: 'Last Word',
           subtitle: 'HERBAL AND ELECTRIC',
           ingredients: [
@@ -102,16 +116,16 @@
           ],
           instructions: 'Shake and strain into a coupe glass.'
         }; modalOpen = true"
-      >
-        <h2 class="drink-title text-center text-2xl tracking-wide">LAST WORD</h2>
-        <p class="drink-subtitle text-center">HERBAL AND ELECTRIC</p>
-        <p class="short-ingredients text-center">Gin, green Chartreuse, maraschino, lime</p>
-      </div>
+        >
+            <h2 class="drink-title text-center text-2xl tracking-wide">LAST WORD</h2>
+            <p class="drink-subtitle text-center">HERBAL AND ELECTRIC</p>
+            <p class="short-ingredients text-center">Gin, green Chartreuse, maraschino, lime</p>
+        </div>
 
-      <!-- PAPER PLANE -->
-      <div
-        class="cursor-pointer"
-        @click="modalDrink = {
+        <!-- PAPER PLANE -->
+        <div
+                class="cursor-pointer"
+                @click="modalDrink = {
           name: 'Paper Plane',
           subtitle: 'BRIGHT AND BITTERSWEET',
           ingredients: [
@@ -122,16 +136,16 @@
           ],
           instructions: 'Shake and strain into a coupe glass.'
         }; modalOpen = true"
-      >
-        <h2 class="drink-title text-center text-2xl tracking-wide">PAPER PLANE</h2>
-        <p class="drink-subtitle text-center">BRIGHT AND BITTERSWEET</p>
-        <p class="short-ingredients text-center">Bourbon, Aperol, Amaro Nonino, lemon</p>
-      </div>
+        >
+            <h2 class="drink-title text-center text-2xl tracking-wide">PAPER PLANE</h2>
+            <p class="drink-subtitle text-center">BRIGHT AND BITTERSWEET</p>
+            <p class="short-ingredients text-center">Bourbon, Aperol, Amaro Nonino, lemon</p>
+        </div>
 
-      <!-- OAXACA OLD FASHIONED -->
-      <div
-        class="cursor-pointer"
-        @click="modalDrink = {
+        <!-- OAXACA OLD FASHIONED -->
+        <div
+                class="cursor-pointer"
+                @click="modalDrink = {
           name: 'Oaxaca Old Fashioned',
           subtitle: 'BOOZY AND SMOKY',
           ingredients: [
@@ -142,16 +156,16 @@
           ],
           instructions: 'Stir with ice and strain into a rocks glass over a large ice cube.'
         }; modalOpen = true"
-      >
-        <h2 class="drink-title text-center text-2xl tracking-wide">OAXACA OLD FASHIONED</h2>
-        <p class="drink-subtitle text-center">BOOZY AND SMOKY</p>
-        <p class="short-ingredients text-center">Tequila, mezcal, agave, bitters</p>
-      </div>
+        >
+            <h2 class="drink-title text-center text-2xl tracking-wide">OAXACA OLD FASHIONED</h2>
+            <p class="drink-subtitle text-center">BOOZY AND SMOKY</p>
+            <p class="short-ingredients text-center">Tequila, mezcal, agave, bitters</p>
+        </div>
 
-      <!-- GOLDEN HOUR -->
-      <div
-        class="cursor-pointer"
-        @click="modalDrink = {
+        <!-- GOLDEN HOUR -->
+        <div
+                class="cursor-pointer"
+                @click="modalDrink = {
           name: 'Golden Hour',
           subtitle: 'NON-ALCOHOLIC · VIBRANT AND SPICED',
           ingredients: [
@@ -163,23 +177,23 @@
           ],
           instructions: 'Shake and pour into a highball glass with the ice.'
         }; modalOpen = true"
-      >
-        <h2 class="drink-title text-center text-2xl tracking-wide">GOLDEN HOUR</h2>
-        <p class="drink-subtitle text-center">NON-ALCOHOLIC · VIBRANT AND SPICED</p>
-        <p class="short-ingredients text-center">Pineapple, lime, cinnamon, demerara</p>
-      </div>
+        >
+            <h2 class="drink-title text-center text-2xl tracking-wide">GOLDEN HOUR</h2>
+            <p class="drink-subtitle text-center">NON-ALCOHOLIC · VIBRANT AND SPICED</p>
+            <p class="short-ingredients text-center">Pineapple, lime, cinnamon, demerara</p>
+        </div>
 
     </div>
-  </div>
+</div>
 
-  <!-- MODAL -->
+<!-- MODAL -->
 <div
   x-show="modalOpen"
   x-transition.opacity
   class="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50"
   @click.self="modalOpen = false"
 >
-  <div class="bg-white/95 rounded-xl p-6 w-full max-w-md max-h-[calc(100vh-4rem)] overflow-y-auto shadow-xl">
+  <div class="bg-white/95 rounded-xl p-6 w-full max-w-xl max-h-[calc(100%-4rem)] overflow-y-auto shadow-xl">
     <h2 class="drink-title text-3xl text-center mb-2" x-text="modalDrink?.name"></h2>
     <p class="drink-subtitle text-center mb-4" x-text="modalDrink?.subtitle"></p>
 
