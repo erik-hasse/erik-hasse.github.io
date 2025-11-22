@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ open: null }">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cocktails</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    .header-font { font-family: 'Aleo', serif; }
+    .drink-title { font-family: 'Aleo', serif; font-weight: 600; }
+    .drink-subtitle { font-family: 'Aleo', serif; font-style: italic; }
+
+    /* Custom tweakable styles */
+    .short-ingredients { font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: 0.5px; color: #0CA5B0; }
+    .full-ingredients { font-family: 'Inter', sans-serif; color: #333; }
+
+    body { background-attachment: fixed; }
+  </style>
+</head>
+
+<body class="min-h-screen bg-cover bg-center bg-fixed" style="background-image: url('background.jpg');">
+  <div class="bg-white/90 max-w-3xl mx-auto my-8 p-6 rounded-xl shadow-lg">
+    <h1 class="header-font text-5xl text-center mb-10">Cocktails</h1>
+
+    <div class="space-y-10">
+
+      <!-- DRINK TEMPLATE EXAMPLE -->
+      <!-- Each drink uses :class to toggle visibility based on open===index -->
+
+      <!-- AUTUMN DAIQUIRI -->
+      <div class="cursor-pointer" @click="open = open === 1 ? null : 1">
+        <h2 class="drink-title text-center text-2xl tracking-wide">AUTUMN DAIQUIRI</h2>
+        <p class="drink-subtitle text-center">WARMING AND TROPICAL</p>
+        <p class="short-ingredients text-center">Gold rum, lime, pineapple, cinnamon, demerara, bitters</p>
+        <div x-show="open === 1" class="mt-3 text-sm full-ingredients" x-collapse>
+          <ul class="list-disc list-inside">
+            <li>2 oz gold rum</li>
+            <li>½ oz lime juice</li>
+            <li>½ oz pineapple juice</li>
+            <li>¼ oz cinnamon syrup</li>
+            <li>¼ oz demerara syrup</li>
+            <li>1 dash Angostura bitters</li>
+          </ul>
+          <div class="mt-2">
+            Shake and strain into a coupe glass.
+          </div>
+
+        </div>
+      </div>
+
+      <!-- JET PILOT -->
+      <div class="cursor-pointer" @click="open = open === 2 ? null : 2">
+        <h2 class="drink-title text-center text-2xl tracking-wide">JET PILOT</h2>
+        <p class="drink-subtitle text-center">INTENSE AND SPICED</p>
+        <p class="short-ingredients text-center">Dark & overproof rum, lime, cinnamon, falernum, bitters, absinthe</p>
+        <div x-show="open === 2" class="mt-3 text-sm full-ingredients" x-collapse>
+          <ul class="list-disc list-inside">
+            <li>2½ oz Zombie blend rum</li>
+            <li>½ oz falernum</li>
+            <li>½ oz lime juice</li>
+            <li>½ oz grapefruit juice</li>
+            <li>½ oz cinnamon syrup</li>
+            <li>1 dash Angostura bitters</li>
+            <li>4 drops absinthe</li>
+          </ul>
+          <div class="mt-2">
+            Shake and pour into a double old fashioned glass with the ice
+          </div>
+        </div>
+      </div>
+
+      <!-- LAST WORD -->
+      <div class="cursor-pointer" @click="open = open === 3 ? null : 3">
+        <h2 class="drink-title text-center text-2xl tracking-wide">LAST WORD</h2>
+        <p class="drink-subtitle text-center">HERBAL AND ELECTRIC</p>
+        <p class="short-ingredients text-center">Gin, green Chartreuse, maraschino, lime</p>
+        <div x-show="open === 3" class="mt-3 text-sm full-ingredients" x-collapse>
+          <ul class="list-disc list-inside">
+            <li>¾ oz gin</li>
+            <li>¾ oz green Chartreuse</li>
+            <li>¾ oz maraschino liqueur</li>
+            <li>¾ oz lime juice</li>
+          </ul>
+          <div class="mt-2">
+            Shake and strain into a coupe glass.
+          </div>
+        </div>
+      </div>
+
+      <!-- PAPER PLANE -->
+      <div class="cursor-pointer" @click="open = open === 4 ? null : 4">
+        <h2 class="drink-title text-center text-2xl tracking-wide">PAPER PLANE</h2>
+        <p class="drink-subtitle text-center">BRIGHT AND BITTERSWEET</p>
+        <p class="short-ingredients text-center">Bourbon, Aperol, Amaro Nonino, lemon</p>
+        <div x-show="open === 4" class="mt-3 text-sm full-ingredients" x-collapse>
+          <ul class="list-disc list-inside">
+            <li>1 oz bourbon</li>
+            <li>1 oz Aperol</li>
+            <li>1 oz Amaro Nonino</li>
+            <li>1 oz lemon juice</li>
+          </ul>
+          <div class="mt-2">
+            Shake and strain into a coupe glass.
+          </div>
+        </div>
+      </div>
+
+      <!-- OAXACA OLD FASHIONED -->
+      <div class="cursor-pointer" @click="open = open === 5 ? null : 5">
+        <h2 class="drink-title text-center text-2xl tracking-wide">OAXACA OLD FASHIONED</h2>
+        <p class="drink-subtitle text-center">BOOZY AND SMOKY</p>
+        <p class="short-ingredients text-center">Tequila, mezcal, agave, bitters</p>
+        <div x-show="open === 5" class="mt-3 text-sm full-ingredients" x-collapse>
+          <ul class="list-disc list-inside">
+            <li>1½ oz tequila</li>
+            <li>½ oz mezcal</li>
+            <li>1 tsp agave syrup</li>
+            <li>2 dashes Angostura bitters</li>
+          </ul>
+          <div class="mt-2">
+            Stir with ice and strain into a rocks glass over a large ice cube.
+          </div>
+        </div>
+      </div>
+
+      <!-- GOLDEN HOUR -->
+      <div class="cursor-pointer" @click="open = open === 6 ? null : 6">
+        <h2 class="drink-title text-center text-2xl tracking-wide">GOLDEN HOUR</h2>
+        <p class="drink-subtitle text-center">NON-ALCOHOLIC · VIBRANT AND SPICED</p>
+        <p class="short-ingredients text-center">Pineapple, lime, cinnamon, demerara</p>
+        <div x-show="open === 6" class="mt-3 text-sm full-ingredients" x-collapse>
+          <ul class="list-disc list-inside">
+            <li>2 oz pineapple</li>
+            <li>¾ oz lime juice</li>
+            <li>½ oz cinnamon syrup</li>
+            <li>¼ oz demerara</li>
+            <li>6 drops tiki bitters <em>(Optional, omit for fully NA)</em></li>
+          </ul>
+          <div class="mt-2">
+            Shake and pour into a highball glass with the ice
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
